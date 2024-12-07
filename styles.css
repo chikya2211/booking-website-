@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark theme */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    padding-top: 30px; /* Added space at the top of the screen */
+}
+
+header {
+    background-color: #e74c3c; /* Red background for bold feel */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 50px; /* Rounded corners */
+    margin-bottom: 20px; /* Space between header and product container */
+    animation: slideIn 1s ease-out;
+}
+
+h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+    animation: fadeInHeader 1s ease-out;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.product {
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInProduct 0.5s ease-out forwards;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 8px;
+    height: auto;
+    animation: zoomInImage 0.6s ease-out;
+}
+
+.product h2 {
+    font-size: 24px;
+    margin: 15px 0;
+    color: #e74c3c;
+    animation: fadeInText 0.8s ease-out;
+}
+
+.product p {
+    font-size: 16px;
+    color: #ddd;
+    text-align: left; /* Align text left */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    animation: fadeInText 1s ease-out;
+}
+
+.button {
+    padding: 12px 24px;
+    background-color: #e74c3c; /* Bold red color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    animation: bounceButton 1s ease-out infinite;
+}
+
+.button:hover {
+    background-color: #c0392b;
+}
+
+/* Hover effects */
+.product:hover .button {
+    background-color: #c0392b;
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    animation: fadeInPopup 0.6s ease-out;
+}
+
+.popup-content {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+}
+
+.popup button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    animation: bounceButton 1s ease-out infinite;
+}
+
+.popup button:hover {
+    background-color: #c0392b;
+}
+
+/* Additional themed color changes for specifications */
+.product p b {
+    color: #e74c3c; /* Make specifications headings bold red */
+}
+
+.product p {
+    color: #ddd; /* Light color for description text */
+}
+
+/* Adding smooth motion effects */
+.product {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInHeader {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInProduct {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomInImage {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceButton {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInPopup {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
